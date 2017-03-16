@@ -1,0 +1,163 @@
+
+
+body {
+    font-family: "Helvetica";
+    background-color: #633e06;
+    background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+}
+
+.jumbotron{
+    background-color: #472409;
+    background-image: url("https://www.transparenttextures.com/patterns/black-twill.png");
+    color: azure;
+}
+
+#jumboHome{
+    background-color: #BFAA8E;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#logo{
+    text-align: center;
+}
+
+#carou{
+    height: 305px;
+    width: 450px; 
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#pub{
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.commande > img {
+    width:100px;
+}
+#select{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*.well {
+    width: 250px;
+}*/
+h1 {
+    color: #C03000;
+}
+h2 {
+    color: #4BB5C1;
+}
+a {
+    color: #96CA2D;
+    text-decoration: none;
+}
+h4 {
+    color: #292929;
+}
+p {
+    color: goldenrod;
+}
+
+#text{
+    color: antiquewhite;
+}
+
+#navigation li {
+    background-color: red;
+    width: 100px;
+    padding: 5px;
+    border: 5px solid white;
+    margin: 0px;
+    display: inline-block;
+}
+
+
+#panier{
+    display: block;
+}
+
+.maListePanier{
+    list-style: none;
+}
+
+.monImagePanier{
+    height: 40px;
+    width: 40px;
+}
+
+.monInputPanier{
+    height: 20px;
+    width: 40px;
+}
+
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    vertical-align: middle;
+}
+
+#divNomClient{
+    float: right;
+}
+
+#foot{
+    text-align: center;
+    margin-top: 40px;
+}
+
+tr {
+    color: antiquewhite;
+}
+
+span.rupture{
+    color: red;
+    
+}
+
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control {
+        width: 20%;
+        display: inline !important;
+    }
+    
+    .actions .btn {
+        width: 36%;
+        margin: 1.5em 0;
+    }
+    
+    .actions .btn-info {
+        float: left;
+    }
+    
+    .actions .btn-danger {
+        float: right;
+    }
+    
+    table#cart thead {
+        display: none;
+    }
+    
+    table#cart tbody td {
+        display: block;
+        padding: .6rem;
+        min-width: 320px;
+    }
+    
+    table#cart tbody tr td:first-child {
+        background: #333;
+        color: #fff;
+    }
+    
+    table#cart tbody td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+        width: 8rem;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="pizzeria">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pizz'DTAdev</title>
+	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/style.css" />
+	<script src="js/bundle.js"></script>
+</head>
+
+
+<body>
+	<div class="pull-right" ng-controller="translateCtrl as ctrl">
+		<div ng-switch on="ctrl.cookievalue">
+			<div ng-switch-when="en">
+				<a href="" ng-click="ctrl.changeLanguage('en')"><strong>English</strong></a> - <a href="" ng-click="ctrl.changeLanguage('fr')">Français</a>
+			</div>
+			<div ng-switch-default>
+				<a href="" ng-click="ctrl.changeLanguage('en')">English</a> - <a href="" ng-click="ctrl.changeLanguage('fr')"><strong>Français</strong></a>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container" ng-controller="decoCtrl as deco">
+			<div class="col-md-3">
+				<img src="../../assets/img/logo.png" alt="pizzaPicture" class="img-responsive">
+			</div>
+			<div class="col-md-7">
+				<h1>Pizz'DTAdev</h1>
+				<ul class="nav nav-pills">
+					<li role="presentation">
+						<a href="#/" translate="HOME"></a>
+					</li>
+					<li role="presentation">
+						<a href="#/pizzas" translate="PIZZA"></a>
+					</li>
+					<li role="presentation" ng-show="deco.isConnected()">
+						<a href="#/listCommandes" translate="COMMANDE"></a>
+					</li>
+					<li role="presentation" ng-hide="deco.isConnected()">
+						<a href="#/connection" translate="CONNECTION"></a>
+					</li>
+					<li role="presentation" ng-click="deco.Action()" ng-show="deco.isConnected()">
+						<a href="#/connection" translate="DECO"></a>
+					</li>
+					<li role="presentation" ng-hide="deco.isConnected()">
+						<a href="#/inscription" translate="INSCRIT"></a>
+					</li>
+				</ul>
+			</div>
+			<div ng-show="deco.isConnected()" id="divNomClient" class="col-lg-3 col-lg-offset-9">
+                <p class="welcomeConnect"><span translate="BIENVENUE"></span> <strong>{{deco.getClientConnecte().nom}}</strong></p>
+            </div>
+		</div>
+	</div>
+	<div class="container" ng-view></div>
+
+	<footer id="foot">
+		<a id="contact" href="#" translate="CONTACT"></a>
+		<p>&copy; 2016 Company, Inc.</p>
+	</footer>
+</body>
+
+    </body>
+</html>

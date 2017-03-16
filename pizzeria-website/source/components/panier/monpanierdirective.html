@@ -1,0 +1,23 @@
+<div>
+    <ul ng-if="storedPanier.length == 0">
+        <li class="maListePanier" translate="ETAT_PANIER"></li>
+    </ul>
+    <ul ng-if="storedPanier.length != 0">
+        <li ng-repeat="storedPizza in storedPanier " class="maListePanier"> 
+            <img ng-src="{{imageP(storedPizza.pizza.urlImage)}}" alt="" class="monImagePanier"> 
+            <span>{{storedPizza.pizza.nom}}</span>
+            <p>Prix: {{storedPizza.pizza.prix | number:2}} &euro;</p>
+            <label translate="QUANTITE"></label>
+            <input class="monInputPanier" name="quantite" type="number" ng-model="storedPizza.quan" ng-change="changeQuant(storedPizza.quan)"
+                   value="{{storedPizza.quan}}" min="1" max="99" required="true" step="1">
+            <button type="button" class="btn-danger" ng-click="supprimerPanier(storedPizza)">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </li>
+    </ul>
+    <tfoot>
+        <tr>
+            <td colspan="2"><strong translate="TOTAL"></strong><strong> {{total() | number:2}} &euro;</strong></td>
+        </tr>
+        <td colspan="2"><a href="#/commande" ng-click="enregistrer()" class="btn btn-success btn-block" translate="{{btnValue}}"><i class="fa fa-angle-right"></i></a></td>
+    </tfoot>
+</div>

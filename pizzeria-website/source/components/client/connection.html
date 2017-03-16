@@ -1,0 +1,41 @@
+<div ng-show="client.error" class="alert alert-danger" role="alert">
+    Erreur de login ou de mot de passe veuillez recommencer
+</div>
+<div ng-show="client.success" class="alert alert-success" role="alert">
+    Connexion réussie
+</div>
+<div class="container">
+  <!-- Formulaire -->
+  <form class="form-horizontal" ng-submit="client.logClient()">
+  <fieldset>
+
+  <!-- Form Name -->
+  <legend>Formulaire de connexion</legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput">Email</label>  
+    <div class="col-md-4">
+    <input id="textinput" name="textinput" type="email" ng-model="client.cli.email" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <!-- Password input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="passwordinput">Password</label>
+    <div class="col-md-4">
+      <input id="passwordinput" name="passwordinput" type="password" ng-model="client.cli.password" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="singlebutton"></label>
+    <div class="col-md-4">
+      <button id="singlebutton" name="singlebutton" class="btn btn-success">Valider</button>
+    </div>
+  </div>
+
+  </fieldset>
+  </form>
+</div>

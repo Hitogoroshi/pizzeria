@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="container-fluid">
+		<div class="row">
+			<!--Menu des pizzas-->
+			<div class="col-md-9 main">
+				<h1 translate="MENU"></h1>
+				<!-- filtre par categories -->
+				<div id="select" class="container">
+
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="selectbasic" translate="CATE"></label>
+						<div class="col-md-2">
+							<select ng-model="tri.categorie" id="selectbasic" name="selectbasic" class="form-control" ng-change="tri.categorie = tri.categorie == '' ? undefined : tri.categorie">
+                                <option value="" translate="TOUTES"></option>
+                                <option ng-value="'SANS_VIANDE'" translate="SANS_VIANDE"></option>
+                                <option ng-value="'VIANDE'" translate="VIANDE"></option>
+                                <option ng-value="'POISSON'" translate="POISSON"></option>
+                            </select>
+						</div>
+					</div>
+				</div>
+				<!--Menu des pizzas-->
+				<div class="container">
+
+					<div class="col-sm-5 col-md-3" ng-repeat="pizza in pizz.allPizzas | filter : tri : true || undefined ">
+						<div class="thumbnail">
+							<div img-url="pizza.urlImage"></div>
+							<div class="caption">
+								<h2>{{pizza.nom}}</h2>
+								<p><span translate="CATEGORIE"></span>{{(pizza.categorie) | translate}}</p>
+								<h3>{{pizza.prix | number:2}}€</h3>
+								<a href="#/pizzas/{{pizza.id}}" class="btn btn-primary" style="{position : float ; bottom : 0 } !important" translate="DETAIL"></a> <a class="btn btn-primary" ng-click="pizz.ajoutPanier(pizza)" style="{position : float ; bottom : 0 } !important"
+									translate="AJOUT" ng-disabled="{{!pizza.disponible}}"><span class="glyphicon glyphicon-cart" aria-hidden="true"></span></a>								<span class="rupture" ng-show="{{!pizza.disponible}}" translate="RUPTURE"></span></div>
+						</div>
+					</div>
+				</div>
+				<p>
+					<a href="/#/" translate="RETOUR_ACCUEIL"></a>
+				</p>
+			</div>
+			<div class="col-md-3">
+				<div id="panier" class="well">
+					<h1 translate="PANIER"></h1>
+					<table id="cart" class="table table-hover table-condensed">
+						<ul ng-if="storedPanier.length == 0">
+							<li class="maListePanier" translate="ETAT_PANIER"></li>
+						</ul>
+						<mon-panier class="expander" btn-value="PASSER_COMMANDE" dir-panier="pizzCtrl.localpanier"></mon-panier>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

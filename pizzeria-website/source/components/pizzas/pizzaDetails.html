@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="thumbnail col-md-9">
+        <div class="container"><div class="col-md-4"><h2><strong>{{pizzD.pizza.nom}}</strong> <span class="rupture" ng-show="!pizzD.pizza.disponible" translate="RUPTURE"></span></h2><br></div></div>
+        <div class="container" layout>
+            <div class="col-md-4 col-sm-6">
+                <img style="width : 100%" ng-src="{{pizzD.url}}" alt="">
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h3><strong translate="PRIX"></strong>{{pizzD.pizza.prix | number:2}}€</h3>
+                    <h4><strong translate="CATEGORIE"></strong>{{(pizzD.pizza.categorie) | translate}}</h4>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <h3><strong translate="INGREDIENTS"></strong></h3>
+                    <ul>
+                        <li ng-repeat="ingredient in pizzD.pizza.ingredients">
+                            {{ingredient.ingredient.nom}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="container"><div class="col-md-4"><br><a href="#/pizzas" translate="RETOUR"></a></div></div>
+    </div>
+    <div class="col-md-3">
+				<div id="panier" class="well">
+					<h1 translate="PANIER"></h1>
+					<table id="cart" class="table table-hover table-condensed">
+						<ul ng-if="storedPanier.length == 0">
+							<li class="maListePanier" translate="ETAT_PANIER"></li>
+						</ul>
+						<mon-panier class="expander" btn-value="PASSER_COMMANDE" dir-panier="pizzCtrl.localpanier"></mon-panier>
+					</table>
+				</div>
+			</div>
+</div>

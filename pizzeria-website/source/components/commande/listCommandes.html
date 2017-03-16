@@ -1,0 +1,33 @@
+<table class="table">
+	<thead>
+		<tr>
+            <!--Traduction Effectuée -->
+			<th translate="NUM_COMMANDE"></th>
+			<th translate="STATUT_PAIEMENT"></th>
+			<th translate="STATUT_COMMANDE"></th>
+			<th translate="DATE">Date</th>
+			<th translate="LISTE_PIZZA">Liste pizza</th>
+			<th translate="TOTAL">Prix total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="c in com.commande">
+			<td>{{c.numeroCommande}}</td>
+			<td>{{c.statutPaiement}}</td>
+			<td>{{c.statut}}</td>
+			<td>{{c.dateCommande}}</td>
+			<td>
+				<ul><!-- Affiche la liste des Pizzas de la commande
+                        Class: maListePanier retire juste les pastilles de la liste, 
+                        ATTENTION cette classe est utilisée dans le panier Gaff au modif 
+                    -->
+					<li ng-repeat="pizza in c.pizzas" class="maListePanier">{{pizza.pizza.nom}} *{{pizza.quantite}}</li>
+				</ul>
+			</td>
+			<td>
+                <!-- Dans l'idée, ici on devrait recupérer le total depuis le controlleur-->
+                <span>{{c.total}} &euro;</span>
+            </td>
+		</tr>
+	</tbody>
+</table>

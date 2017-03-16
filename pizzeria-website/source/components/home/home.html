@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="header-right col-md-9">
+        <div id="jumboHome" class="jumbotron">
+            <div id="logo" class="container">
+                <h3><i translate="TITRE"></i></h3>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h4 translate="PROPOSONS"></h4>
+                <p id="text" translate="DESCRIPTION11"></p>
+                <p id="text" translate="DESCRIPTION12"></p>
+            </div>
+
+        </div>
+        <div>
+            <div id="carou">
+                <div uib-carousel active="active" interval="home.myInterval" no-wrap="noWrapSlides">
+                    <div uib-slide ng-repeat="slide in home.slides track by slide.id" index="slide.id">
+                        <img ng-src="{{slide.image}}" style="margin:auto;" class ="">
+                        <div class="carousel-caption">
+                            <h3>{{slide.text | translate}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4 translate="HISTOIRE"></h4>
+            <p id="text" translate="DESCRIPTION2"></p>
+            <div id="pub">
+                <h4 class="col-md-4" translate="LIEN"></h4><a href="http://www.leparisien.fr/economie/restauration-en-france-la-pizza-est-reine-08-03-2016-5607715.php" class="col-md-2"><img class="colorbox-class logo-elle-home alignnone" src="cd ../../assets/img/accueil.jpg" alt="logo-elle"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+				<div id="panier" class="well">
+					<h1 translate="PANIER"></h1>
+					<table id="cart" class="table table-hover table-condensed">
+						<ul ng-if="storedPanier.length == 0">
+							<li class="maListePanier" translate="ETAT_PANIER"></li>
+						</ul>
+						<mon-panier class="expander" btn-value="PASSER_COMMANDE" dir-panier="pizzCtrl.localpanier"></mon-panier>
+					</table>
+				</div>
+			</div>
+</div>
