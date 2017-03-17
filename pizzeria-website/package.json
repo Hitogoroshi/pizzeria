@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Thomas <tlebeau@oasiswork.fr> (http://oasiswork.fr)",
+  "author": "charleen kemps",
   "license": "UNLICENSED",
   "devDependencies": {
     "angular-cookies": "^1.5.8",
